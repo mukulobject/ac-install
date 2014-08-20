@@ -4,10 +4,11 @@ var querystring = require('querystring');
 module.exports = function(grunt) {
     grunt.registerTask('ac-token', function() {
         var done = this.async();
+        var pkg= grunt.file.readJSON('package.json');
 
         var options = {
-            hostname: 'localhost',
-            port: 2990,
+            hostname: pkg.host,
+            port: pkg.port,
             path: '/jira/rest/plugins/1.0/?'+querystring.stringify({ "os_authType": "basic" }),
             method: 'GET',
             headers: { 

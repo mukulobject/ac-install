@@ -4,11 +4,12 @@ module.exports = function(grunt) {
     grunt.registerTask('ac-install', function() {
     var done = this.async();
     var upm_token = grunt.config.get('ac.token');
+    var pkg= grunt.file.readJSON('package.json');
     grunt.log.writeln('### sending post request to install add on - '+ upm_token);
 
     var post_options = {
-        hostname: 'localhost',
-        port: 2990,
+        hostname: pkg.host,
+        port: pkg.port,
         path: '/jira/rest/plugins/1.0/?token='+upm_token,
         method: 'POST',
         headers: { 
