@@ -5,5 +5,6 @@
     "grunt": "~0.4.5"
   },
   "host": "localhost",
-  "port": 2990
+  "port": 2990,
+  "pluginUri": "http://localhost:9000/atlassian-connect.json"
 }

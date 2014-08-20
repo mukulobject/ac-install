@@ -19,7 +19,7 @@ module.exports = function(grunt) {
     };
 
     var post_data = {
-                'pluginUri' : 'http://localhost:9000/atlassian-connect.json'
+                'pluginUri' : pkg.pluginUri
             };
     
     var post_request = http.request(post_options, function(res) {
